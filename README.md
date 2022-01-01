@@ -53,7 +53,6 @@ Here is an in-depth [guide]() for proper usage.
 ## Disclosure
 This main [branch](kollier-martin/SpoolyAPI/master) contains the current release version of the project. <br />
 The production [branch](kollier-martin/SpoolyAPI/production) contains the in-production version of the project. <br />
-It is your choice to decide which branch you would like run from.
 
 ## Contributors
 
