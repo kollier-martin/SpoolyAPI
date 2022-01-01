@@ -1,5 +1,6 @@
+# Configure Eureka Server
 server:
-  port: 8092
+  port: 8090
 
 eureka:
   client:
@@ -8,6 +9,6 @@ eureka:
 
 spring:
   application:
-    name: ManufacturerMS
+    name: EngineMS
   codec:
     max-in-memory-size: 1MB

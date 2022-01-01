@@ -1,5 +1,5 @@
 server:
-  port: 8092
+  port: 8093
 
 eureka:
   client:
@@ -8,6 +8,6 @@ eureka:
 
 spring:
   application:
-    name: ManufacturerMS
+    name: TransmissionMS
   codec:
     max-in-memory-size: 1MB
