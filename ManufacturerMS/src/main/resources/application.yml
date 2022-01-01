@@ -1,0 +1,19 @@
+# Logging
+logging:
+  level:
+    org:
+      hibernate:
+        stat: debug
+        type: trace
+
+  pattern:
+    console: %d{yyyy-MM-dd HH:mm:ss} - %msg%n
+    file: %d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level
+
+  file:
+    name: /logs/application-debug.log
+
+spring:
+  output:
+    ansi:
+      enabled: detect
