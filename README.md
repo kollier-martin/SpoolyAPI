@@ -1,9 +1,5 @@
 # Spooly API
 
-### Project Description
-
-Built from scratch, this API is a convenient way to fetch information relating to car parts and their descriptions for use in custom applications.
-
 ### Features
 - [ ] As a user, I can request a part by manufacturer
 - [ ] As a user, I can request a custom car to be built
