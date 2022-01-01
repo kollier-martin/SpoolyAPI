@@ -26,7 +26,8 @@
 
 #### Environment Set up Steps
 1. Open project in a Java IDE, preferrably IntelliJ
-2. To run application locally set up 'application.propeties' file in each service to contain database and server information
+2. The setup files for each service is already set up in the 'application.yml' files
+3. To run application locally with confidential information set up 'application.propeties' file in each service to contain database and server information
   ```properties
   # Spring Data Source Information
   spring.datasource.url=
