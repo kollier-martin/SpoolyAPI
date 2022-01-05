@@ -1,0 +1,46 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: zuul-server
+  main:
+    web-application-type: reactive
+
+eureka:
+  client:
+    service-url: http://localhost:${server.port}}/eureka
+    register-with-eureka: true
+    fetch-registry: true
+zuul:
+  sensitive-headers:
+  routes:
+    BoostMS:
+      path: /api/boost/**
+      service-id: BoostMS
+    EngineMS:
+      path: /api/engine/**
+      service-id: EngineMS
+    HandlingMS:
+      path: /api/handling/**
+      service-id: HandlingMS
+    ManufacturerMS:
+      path: /api/manufacturer/**
+      service-id: ManufacturerMS
+    TransmissionMS:
+      path: /api/transmission/**
+      service-id: TransmissionMS
+    BuilderMS:
+      path: /builder/**
+      service-id: BuilderMS
+  host:
+    connection-request-timeout-millis: 30000
+    connect-timeout-millis: 30000
+    socket-timeout-millis: 30000
+  retryable: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: /builder, /api
