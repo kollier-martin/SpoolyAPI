@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: ManufacturerMS
+
+  cloud:
+    config:
+      uri: http://localhost:1111
+
+  config:
+    import:
+      configserver: property

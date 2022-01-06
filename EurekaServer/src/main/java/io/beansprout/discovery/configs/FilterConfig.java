@@ -15,7 +15,6 @@ import java.util.Collections;
  */
 @Configuration
 public class FilterConfig {
-
     @Bean
     @SuppressWarnings({"rawtypes, unchecked"})
     public FilterRegistrationBean corsRegistrationBean() {

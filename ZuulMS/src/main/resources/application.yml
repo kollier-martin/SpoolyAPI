@@ -1,17 +1,27 @@
-server:
-  port: 8082
-
 spring:
   application:
     name: zuul-server
   main:
     web-application-type: reactive
+    allow-bean-definition-overriding: true
+
+server:
+  port: ${random.int(8000,8100)}
 
 eureka:
+  instance:
+    nonSecurePortEnabled: false
+    securePortEnabled: true
+    securePort: ${server.port}
+    statusPageUrl: https://localhost:${server.port}/info
+    healthCheckUrl: https://localhost:${server.port}/health
+    homePageUrl: https://localhost:${server.port}
   client:
-    service-url: http://localhost:${server.port}}/eureka
+    service-url:
+      defaultZone: https://localhost:8761/eureka/
     register-with-eureka: true
     fetch-registry: true
+
 zuul:
   sensitive-headers:
   routes:
@@ -43,4 +53,4 @@ management:
   endpoints:
     web:
       exposure:
-        include: /builder, /api
+        include: health, info, builder, api, actuator

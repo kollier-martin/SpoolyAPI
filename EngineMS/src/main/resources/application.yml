@@ -1,14 +1,21 @@
-# Configure Eureka Server
-server:
-  port: 8090
-
-eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:8010/eureka
-
 spring:
   application:
     name: EngineMS
   codec:
     max-in-memory-size: 1MB
+
+# Configure Eureka Server
+server:
+  port: ${random.int(8000,8100)}
+
+eureka:
+  instance:
+    nonSecurePortEnabled: false
+    securePortEnabled: true
+    securePort: ${server.port}
+    statusPageUrl: https://localhost:${server.port}/info
+    healthCheckUrl: https://localhost:${server.port}/health
+    homePageUrl: https://localhost:${server.port}
+  client:
+    service-url:
+      defaultZone: https://localhost:8761/eureka/

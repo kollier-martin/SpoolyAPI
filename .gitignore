@@ -63,3 +63,8 @@ build/
 ### VS Code ###
 .vscode/
 /.jpb/
+
+### Important ###
+*.crt
+*.jks
+*.p12

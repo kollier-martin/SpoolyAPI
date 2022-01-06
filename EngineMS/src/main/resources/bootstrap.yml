@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: EngineMS
+
+  cloud:
+    config:
+      uri: http://localhost:1111
+
+  config:
+    import:
+      configserver: property
