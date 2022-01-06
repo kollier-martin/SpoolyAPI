@@ -4,7 +4,6 @@ spring:
   codec:
     max-in-memory-size: 1MB
 
-# Configure Eureka Server
 server:
   port: ${random.int(8000,8100)}
 

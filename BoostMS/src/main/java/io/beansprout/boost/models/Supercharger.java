@@ -1,6 +1,9 @@
 package io.beansprout.boost.models;
 
-import lombok.*;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 import org.hibernate.Hibernate;
 
 import javax.persistence.*;
@@ -29,6 +32,10 @@ public class Supercharger implements Serializable {
     @Column
     @NotNull
     private Float housingDiameter;
+
+    @Column
+    @NotNull
+    private String link;
 
     @Column
     @NotNull

@@ -1,6 +1,9 @@
 package io.beansprout.boost.models;
 
-import lombok.*;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 import org.hibernate.Hibernate;
 
 import javax.persistence.*;
@@ -27,6 +30,10 @@ public class Turbo implements Serializable {
     @Column(unique = true)
     @NotNull
     private String name;
+
+    @Column
+    @NotNull
+    private Integer sizeInMM;
 
     @Column
     @NotNull
