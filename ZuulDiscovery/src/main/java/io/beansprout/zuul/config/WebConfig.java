@@ -28,7 +28,7 @@ public class WebConfig extends WebSecurityConfigurerAdapter {
     Security.addProvider(new BouncyCastleProvider());
     http.cors();
     http.csrf()
-        .disable()
+        .and()
         .requiresChannel(channel -> channel.anyRequest().requiresSecure())
         .authorizeRequests(authorize -> authorize.anyRequest().permitAll())
         .build();
