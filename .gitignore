@@ -49,6 +49,7 @@ target/
 *.iws
 *.iml
 *.ipr
+replay_pid*
 
 ### NetBeans ###
 /nbproject/private/

@@ -4,7 +4,7 @@ spring:
 
   cloud:
     config:
-      uri: http://localhost:1111
+      uri: http://adminK:test@localhost:1111
       fail-fast: true
 
   config:
@@ -16,5 +16,6 @@ management:
     web:
       exposure:
         include: *
+
 
 # TODO: Implement Spring-Cloud-Bus and RabbitMQ for multiple service refreshing

@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: ZuulDiscovery
+
+  cloud:
+    config:
+      uri: http://adminK:test@localhost:1111
+      fail-fast: true
+
+  config:
+    import:
+      configserver: property
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: *
+
+# TODO: Implement Spring-Cloud-Bus and RabbitMQ for multiple service refreshing

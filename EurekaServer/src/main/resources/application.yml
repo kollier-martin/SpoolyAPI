@@ -1,0 +1,33 @@
+# Configure Eureka Server
+# TODO: Fix these settings to read the certification correctly
+server:
+  port: 8761
+
+spring:
+  application:
+    name: Eureka
+  profiles:
+    include: 'config'
+
+eureka:
+  instance:
+    hostname: localhost
+    secure-port: ${server.port}
+    securePortEnabled: true
+    nonSecurePortEnabled: false
+    secureVirtualHostName: ${spring.application.name}
+    homePageUrl: https://${eureka.instance.hostName}:${server.port}/
+    statusPageUrl: https://${eureka.instance.hostName}:${server.port}/actuator/info
+    healthCheckUrl: https://${eureka.instance.hostName}:${server.port}/actuator/health
+    metadataMap:
+      hostname: ${eureka.instance.hostname}
+      securePort: ${server.port}
+
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+
+  server:
+    waitTimeInMsWhenSyncEmpty: 0
+    enable-self-preservation: false
+    renewal-percent-threshold: 0.85

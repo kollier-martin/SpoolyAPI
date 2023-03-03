@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ManuRepo extends JpaRepository<Manufacturer, Integer> {
-    Manufacturer findByName(String name);
+  Manufacturer findByName(String name);
 }

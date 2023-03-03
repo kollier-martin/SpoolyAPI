@@ -7,14 +7,14 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class ManuServiceImpl implements ManuService {
-    private final ManuRepo repo;
+  private final ManuRepo repo;
 
-    public ManuServiceImpl(ManuRepo repo) {
-        this.repo = repo;
-    }
+  public ManuServiceImpl(ManuRepo repo) {
+    this.repo = repo;
+  }
 
-    @Override
-    public Manufacturer findByName(String name) {
-        return repo.findByName(name);
-    }
+  @Override
+  public Manufacturer findByName(String name) {
+    return repo.findByName(name);
+  }
 }

@@ -5,7 +5,7 @@
 - [ ] As a user, I can request a custom car to be built
 
 ## Technologies Used
-* Java 8 
+* Java 8
 * JavaScript ES6
 * HTML5 & CSS3
 * Bootstrap v5.1.3
@@ -19,7 +19,7 @@
 
 #### Clone the repo
 > git clone https://github.com/kollier-martin/SpoolyAPI
-> 
+>
 > After cloning this is how your hierarchy should look.
 
 ![Post Cloning]()

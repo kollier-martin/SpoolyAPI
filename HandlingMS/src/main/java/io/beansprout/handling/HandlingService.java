@@ -6,8 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class HandlingService {
 
-    public static void main(String[] args) {
-        SpringApplication.run(HandlingService.class, args);
-    }
-
+  public static void main(String[] args) {
+    SpringApplication.run(HandlingService.class, args);
+  }
 }

@@ -10,16 +10,16 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class ManufacturerController {
-    private final ManuService manuService;
-    private final MSClient client;
+  private final ManuService manuService;
+  private final MSClient client;
 
-    public ManufacturerController(ManuService manuService, MSClient client) {
-        this.manuService = manuService;
-        this.client = client;
-    }
+  public ManufacturerController(ManuService manuService, MSClient client) {
+    this.manuService = manuService;
+    this.client = client;
+  }
 
-    @GetMapping("/{name}")
-    public ResponseEntity<Manufacturer> getManufacturer(@PathVariable String name) {
-        return ResponseEntity.ok(manuService.findByName(name));
-    }
+  @GetMapping("/{name}")
+  public ResponseEntity<Manufacturer> getManufacturer(@PathVariable String name) {
+    return ResponseEntity.ok(manuService.findByName(name));
+  }
 }

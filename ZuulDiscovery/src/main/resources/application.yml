@@ -1,0 +1,60 @@
+server:
+  port: 8010
+
+spring:
+  application:
+    name: zuul-server
+  main:
+    web-application-type: reactive
+    allow-bean-definition-overriding: true
+  profiles:
+    include: config
+  cloud:
+    gateway:
+      routes:
+        BoostMS:
+          path: /api/boost/**
+          service-id: BoostMS
+        EngineMS:
+          path: /api/engine/**
+          service-id: EngineMS
+        HandlingMS:
+          path: /api/handling/**
+          service-id: HandlingMS
+        ManufacturerMS:
+          path: /api/manufacturer/**
+          service-id: ManufacturerMS
+        TransmissionMS:
+          path: /api/transmission/**
+          service-id: TransmissionMS
+        BuilderMS:
+          path: /builder/**
+          service-id: BuilderMS
+    host:
+      connection-request-timeout-millis: 30000
+      connect-timeout-millis: 30000
+      socket-timeout-millis: 30000
+    retryable: true
+
+eureka:
+  instance:
+    nonSecurePortEnabled: false
+    securePortEnabled: true
+    securePort: ${server.port}
+    statusPageUrl: https://localhost:${server.port}/info
+    healthCheckUrl: https://localhost:${server.port}/health
+    homePageUrl: https://localhost:${server.port}
+    metadataMap:
+      hostname: ${eureka.instance.hostname}
+      securePort: ${server.port}
+  client:
+    service-url:
+      defaultZone: https://localhost:8761/eureka/
+    register-with-eureka: true
+    fetch-registry: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, info, builder, api, actuator
